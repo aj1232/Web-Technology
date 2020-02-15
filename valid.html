@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Regestration Form</title>
+        <style>
+           body{
+              height: auto;
+            
+           }
+        </style>
+        <script type="text/javascript">
+          function valid(){
+              
+              var nm = /^[A-Za-z]+$/;
+              var Phno = /^\d{10}$/;
+              var email = /^[a-zA-Z0-9._-]+@[a-zA-z]\.[a-zA-Z]{2,4}/
+              var fname = document.getElementById("fname").value;
+              var mname = document.getElementById("mname").value; 
+              var lname = document.getElementById("lname").value;
+              var g1 = document.getElementById("g1");
+              var g2 = document.getElementById("g2");
+              var day = document.getElementById("day").value;
+              var mon = document.getElementById("mon").value;
+              var year = document.getElementById("year").value;
+              var city = document.getElementById("city").value;
+              var stt = document.getElementById("stt").value;
+              var cn = document.getElementById("cn").value;
+              var ei = document.getElementById("ei").value;
+              var pw = document.getElementById("pw").value;
+              var rpw = document.getElementById("rpw").value;
+            
+            
+            if(fname.trim()=="")
+            {
+                document.getElementById("war").innerHTML="Please Fill First Name"
+                return false;
+            }
+            
+            
+
+            if(mname.trim()=="")
+            {
+                document.getElementById("war").innerHTML="Fill Middle Name"
+                return false;
+            }
+
+            
+            
+
+            if(lname.trim()=="")
+            {
+                document.getElementById("war").innerHTML="Fill Last Name"
+                return false;
+            }
+
+           
+
+            if(g1.checked == false && g2.checked == false)
+            {
+                document.getElementById("war").innerHTML="Select Gender"
+                return false;
+            }
+
+
+            if(day=="0")
+            {
+                document.getElementById("war").innerHTML="Select Birth-Day"
+                return false;
+            }
+
+
+            if(mon=="0")
+            {
+                document.getElementById("war").innerHTML="Select Birth-Month"
+                return false;
+            }
+
+
+            if(year=="0")
+            {
+                document.getElementById("war").innerHTML="Select Birth-Year"
+                return false;
+            }
+
+
+            if(city=="0"){
+                document.getElementById("war").innerHTML="Select City"
+                return false;
+            }
+            
+                
+            if(stt=="0"){
+                document.getElementById("war").innerHTML="Select State"
+                return false;
+            }
+
+            if(cn.trim()==""){
+                document.getElementById("war").innerHTML="Fill Contact No."
+                return false;
+            }
+
+
+            if(ei.trim()==""){
+                document.getElementById("war").innerHTML="Fill Email-id"
+                return false;
+            }
+
+            
+
+            if(pw.trim()==""){
+                document.getElementById("war").innerHTML="Fill Password"
+                return false;
+            }
+
+            
+
+            if(rpw.trim()==""){
+                document.getElentById("war").innerHTML="Re-Enter Password"
+                return false;
+            }
+
+
+            if(fname.match(nm))
+            {
+                return true;
+            }
+
+            else if(mname.match(nm)){
+                return true;
+			}
+
+            else if(lname.match(nm)){
+                return true;
+            }
+
+            else if(cn.match(Phno)){
+                return true;
+            }
+
+            else if(ei.match(email)){
+                return true;
+            }
+
+            else if(pw!=rpw){
+                document.getElementById("war").innerHTML="Password Not Same"
+                return false;
+            }
+            else{
+                return false;
+            }
+
+        }
+            </script>
+    </head>
+    <body style="height: auto;">
+        <form action="#" onsubmit="return valid()" method="POST">
+            <center>
+                <h1><u>REGESTRATION</u></h1>
+                <table>
+                    <tr>
+                        <!--HERE we are giving WARNING-->
+                        <span id="war" style="color: #ff0000;"></span>
+                    </tr>
+                    <tr>
+                        <td>First Name</td>
+                        <td><input type="text" name="fname" id="fname" maxlength="20"></td>
+                    <tr>
+                        <td>Middle Name</td>
+                        <td><input type="text" name="mname" id="mname" maxlength="20"></td>
+                    </tr>
+                    <tr>
+                        <td>Last Name</td>
+                        <td><input type="text" name="lname" id="lname" maxlength="20"></td>
+                    </tr>
+                    <tr>
+                        <td>Gender</td> 
+                        <td><input type="radio" name="usergender" id="g1">Male
+                        <input type="radio" name="usergender" id="g2">Female</td>
+                    </tr>
+                    <tr>
+                        <td>Date of Birth</td> 		
+                        <td>
+                             <select id="day">
+                              <option value="0">DAY</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                              <option value="6">6</option>
+                              <option value="7">7</option>
+                              <option value="8">8</option>
+                              <option value="9">9</option>
+                              <option value="10">10</option>
+                              <option value="11">11</option>
+                              <option value="12">12</option>
+                              <option value="13">13</option>
+                              <option value="14">14</option>
+                              <option value="15">15</option>
+                              <option value="16">16</option>
+                              <option value="17">17</option>
+                              <option value="18">18</option>
+                              <option value="19">19</option>
+                              <option value="20">20</option>
+                              <option value="21">21</option>
+                              <option value="22">22</option>
+                              <option value="23">23</option>
+                              <option value="24">24</option>
+                              <option value="25">25</option>
+                              <option value="26">26</option>
+                              <option value="27">27</option>
+                              <option value="28">28</option>
+                              <option value="29">29</option>
+                              <option value="30">30</option>
+                              <option value="31">31</option>
+                             </select>
+                              
+                              
+                             <select id="mon">
+                              <option value="0">MONTH</option>
+                              <option value="jan">Jan</option>
+                              <option value="feb">Feb</option>
+                              <option value="mar">Mar</option>
+                              <option value="apr">Apr</option>
+                              <option value="may">May</option>
+                              <option value="jun">Jun</option>
+                              <option value="jul">Jul</option>
+                              <option value="aug">Aug</option>
+                              <option value="sep">Sep</option>
+                              <option value="oct">Oct</option>
+                              <option value="nov">Nov</option>
+                              <option value="dec">Dec</option>
+                             </select>
+
+
+                             <select id="year">
+                              <option value="0">YEAR</option>
+                              <option value="1990">1990</option>
+                              <option value="1991">1991</option>
+                              <option value="1992">1992</option>
+                              <option value="1993">1993</option>
+                              <option value="1994">1994</option>
+                              <option value="1995">1995</option>
+                              <option value="1996">1996</option>
+                              <option value="1997">1997</option>
+                              <option value="1998">1998</option>
+                              <option value="1999">1999</option>
+                              <option value="2000">2000</option>
+                              <option value="2001">2001</option>
+                              <option value="2002">2002</option>
+                              <option value="2003">2003</option>
+                              <option value="2004">2004</option>
+                              <option value="2005">2005</option>
+                             </select>
+                        </td>
+                    </tr>
+                    <tr> 
+                        <td>Address Details:</td> 
+                                 
+                    </tr>
+                    <tr>
+                        <td>City</td>
+                        <td>
+                            <select id="city">
+                                <option value="0">-SELECT-</option>
+                                <option value="baramati">Baramati</option>
+                                <option value="pune">Pune</option>
+                                <option value="mumbai">Mumbai</option>
+                                <option value="nashik">Nashik</option>
+                                <option value="nagpur">Nagpur</option>
+                            </select>
+                        </td>
+                    </tr> 
+                    <tr>
+                        <td>State</td> 	 
+                        <td>
+                            <select id="stt">
+                                <option value="0">-SELECT-</option>
+                                <option value="maharashtra">Maharashtra</option>
+                                <option value="delhi">Delhi</option>
+                                <option value="rajsthan">Rajsthan</option>
+                                <option value="tamilnadu">Tamilnadu</option>
+                                <option value="bihar">Bihar</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Country</td> 	 
+                        <td><input type="text" value="INDIA" name="country" readonly></td> 	 
+                    </tr> 	  
+                    <tr>
+                        <td>Contact No.</td> 		
+                        <td><input type="Phone" name="contact no." id="cn" maxlength="25"></td>
+                    </tr>
+                    <tr>
+                        <td>Email id</td> 		
+                        <td><input type="texty" name="email" id="ei" maxlength="25"></td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td><input type="password" id="pw" maxlength="15"></td>
+                    </tr>
+                    <tr>
+                        <td>Re-Enter Password</td>
+                        <td><input type="password" id="rpw" maxlength="15"></td>
+                    </tr>
+                </table>
+                <br>
+     
+   
+   
+                <input type="submit" value="SUBMIT">
+                <input type="reset" value="RESET">
+            </center>
+        </form>
+    </body>
+</html>
